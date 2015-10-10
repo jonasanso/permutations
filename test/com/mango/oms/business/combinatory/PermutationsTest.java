@@ -1,6 +1,6 @@
 package com.mango.oms.business.combinatory;
 
-import com.mango.oms.business.combinatory.impl.OriginalPermutations;
+import com.mango.oms.business.combinatory.impl.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,7 +15,27 @@ import static org.junit.Assert.assertThat;
 public class PermutationsTest {
 
 
-    OriginalPermutations permutations = new OriginalPermutations();
+    Permutations permutations = new RecursivePermutations();
+
+    @Test
+    public void shouldCalculateBasicPermutations1x1() throws Exception {
+        List<WArray> actual = wrap(this.permutations.getPermutations(new int[]{5}, 1));
+        assertThat(actual.size(), is(1));
+        assertThat(actual, hasItem(new WArray(new int[]{1})));
+
+    }
+
+    @Test
+    public void shouldCalculateBasicPermutations1x0() throws Exception {
+        List<WArray> actual = wrap(this.permutations.getPermutations(new int[]{5}, 0));
+        assertThat(actual.size(), is(0));
+    }
+
+    @Test
+    public void shouldCalculateBasicPermutations1x0BiggerAmount() throws Exception {
+        List<WArray> actual = wrap(this.permutations.getPermutations(new int[]{5}, 10));
+        assertThat(actual.size(), is(0));
+    }
 
     @Test
     public void shouldCalculateBasicPermutations3x2() throws Exception {
@@ -44,7 +64,7 @@ public class PermutationsTest {
 
     @Test
     public void shouldCalculateSearchingForIssuesFor2x0() throws Exception {
-        List<int[]> actual = this.permutations.getPermutations(new int[]{5, 7, 4}, 0);
+        List<WArray> actual = wrap(this.permutations.getPermutations(new int[]{5, 7, 4}, 0));
         assertThat(actual.size(), is(0));
 
     }
