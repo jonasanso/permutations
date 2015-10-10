@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Permutations {
+public class OriginalPermutations implements com.mango.oms.business.combinatory.Permutations {
 
     // Permutaciones de elementos en stock que sumen amount
     //	X + Y + ... = amount, siendo X>0 y X<=stock[i]

@@ -1,5 +1,6 @@
-package com.mango.oms.business.combinatory.impl;
+package com.mango.oms.business.combinatory;
 
+import com.mango.oms.business.combinatory.impl.OriginalPermutations;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import static org.junit.Assert.assertThat;
 public class PermutationsTest {
 
 
-    Permutations permutations = new Permutations();
+    OriginalPermutations permutations = new OriginalPermutations();
 
     @Test
     public void shouldCalculateBasicPermutations3x2() throws Exception {
