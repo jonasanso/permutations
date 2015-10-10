@@ -21,7 +21,7 @@ public class Permutations {
                 return getPermutationsThree(stock, amount);
         }
 
-        return null;
+        return new ArrayList<int[]>();
     }
 
 
@@ -88,28 +88,5 @@ public class Permutations {
 
         return result;
     }
-
-    public static void main(String[] args) {
-        Permutations permutations = new Permutations();
-
-        List<int[]> permutations2 = permutations.getPermutations(new int[] {5,7,4}, 2);
-        for (int[] is : permutations2) {
-            System.out.println(Arrays.toString(is));
-        }
-
-
-        permutations2 = permutations.getPermutations(new int[] {5,2,4}, 1);
-        for (int[] is : permutations2) {
-            System.out.println(Arrays.toString(is));
-        }
-
-        permutations2 = permutations.getPermutations(new int[] {5,2}, 1);
-        for (int[] is : permutations2) {
-            System.out.println(Arrays.toString(is));
-        }
-
-    }
-
-
 
 }
